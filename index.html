@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React - Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root" class="main"></div>
+
+    <script type="text/babel">
+      const Header = () => {
+        return (
+          <div id="header">
+            <div className="header-content-1">
+              <h1> Arvindh.A </h1>
+
+              <p>
+                {" "}
+                Passionate and diligent Electrical Engineer. Experience working
+                in multidisciplinary projects. Enjoys being part of a team, as
+                well as managing and motivating.{" "}
+              </p>
+            </div>
+            <div className="header-content-2">
+              <img
+                className="photo"
+                src="Arvindh(00021995)_8754473406.jpg"
+                alt=""
+              />
+            </div>
+            <div className="header-content-3">
+              arvindhashok1112@gmail.com<i className="material-icons">email</i>
+              <br />
+              08754473406 <br />
+              Chennai,India <br />
+              <a href="https://www.hackerrank.com/Arvindh_vit">
+                hackerrank.com/Arvindh_vit
+              </a>{" "}
+              <br />
+              <a href="https://www.linkedin.com/in/arvindhashok">
+                linkedin.com/in/arvindhashok
+              </a>
+            </div>
+          </div>
+        );
+      };
+
+      const Academic = () => {
+        return (
+          <div id="academic">
+            <div className="academic-1">
+              <h2>ACADEMIC QUALIFICATION</h2>
+            </div>
+            <div className="academic">
+              <b> B.Tech Electrical & Electronics Engineering </b>
+              <br />
+              Vellore Institution of Technology <br />
+              CGPA <br />
+              <ul>
+                <li>8.73</li>
+              </ul>
+            </div>
+            <div className="academic">
+              <b> Higher Secondary </b>
+              <br />
+              SBOA Higher Secondary School <br /> <br />
+              Percentage <br />
+              <ul>
+                <li>93.7%</li>
+              </ul>
+            </div>
+            <div className="academic">
+              <b> Senior Secondary </b> <br />
+              SBOA Higher Secondary School <br /> <br />
+              Percentage <br />
+              <ul>
+                <li>96.2%</li>
+              </ul>
+            </div>
+          </div>
+        );
+      };
+
+      const ExperienceList = ({ title, company, location, task }) => {
+        return (
+          <div className="experience">
+            {title} <br />
+            <b>{company} <br />
+              {location}
+            </b>
+            <br />
+            <ul>
+              {task.map((e,index) => <li key = {index} > {e} </li>)}
+            </ul>
+          </div>
+        );
+      };
+
+      const Experience = () => {
+        return (
+          <div id="experience">
+            <div className="experience-1">
+              <h2>PROFESSIONAL EXPERIENCE</h2>
+            </div>
+            <ExperienceList
+              title={"Graduate Engineering Trainee"}
+              company={"Varroc - A Leading global Auto Technology Supplier"}
+              location={"Pune, Maharastra"}
+              task={[
+                "Undergone training on quality standards such as IATF16949:2016, ISO9001:2015. Also trained on PFMEA and 7QC.",
+                "Implemented a process for control of Customer Specific Requirement in Varroc Quality Management System across all 8 manufacturing plants.",
+                "Responsible for capturing Customer Specific Requirement for all current and potential customer in Varroc Electrical Business Unit.",
+              ]}
+            />
+            <ExperienceList
+              title={"Intern"}
+              company={"Bharat Heavy Electricals Limited - Industrial Systems Group"}
+              location={"Bangalore, Karnataka"}
+              task={[
+                "Received a complete training in PLC programming.",
+                "Solved an industrial control transfer problem using Allen Bradley PLC software and Rockwell Automation hardware which was reviewed by industry experts.",
+                "Developed a program to optimise control panel packing with descending bestfit algorithm using python.",
+              ]}
+            />
+            <ExperienceList
+              title={"Intern"}
+              company={"Chennai Metro Rail Limited"}
+              location={"Chennai, TamilNadu"}
+              task={[
+                "Attained industrial exposure on electric traction motors used in metro train manufactured by Alstom.",
+                "Learnt about IGBT bricks from Mitsubishi used in power converters for traction drive."
+              ]}
+            />
+            <ExperienceList
+              title={"Intern"}
+              company={"TamilNadu Generation and Distribution Corporation"}
+              location={"Chennai, TamilNadu"}
+              task={[
+                "Operation of the sub-station, transformers, circuit breakers and its service routine.",
+                "Load Management in Distribution Circle by SCADA operation.",
+                "Ring Main Unit Operation and Erection.",
+              ]}
+            />
+
+          </div>
+        );
+      };
+      const Skill = () => {
+       return  <div id="skill">
+            <div className="skills-1"><h2>TECHNICAL SKILLS</h2></div>
+            <div className="skills">MATLAB</div>
+            <div className="skills">SIMULINK</div>
+            <div className="skills">C/C++</div>
+            <div className="skills">Python</div>
+            <div className="skills">Javascript</div>
+            <div className="skills">AUTODESK Eagle</div>
+            <div className="skills">PLC Programming</div>
+        </div>
+      }
+
+      const Publication = () => {
+    return    <div id="publication">
+            <div className="publication-1">
+                <h2>PUBLICATIONS</h2>
+            </div>
+            <div className="publication-2">
+                Journal <br />
+               <b> Analysis of Three Phase Quasi Switched Boost Inverter Topology for Renewable Energy Applications </b> <br />
+               <i className="author"> Author(s) </i> <br />
+               
+                P.Sriramalakshmi, A.Arvindh, S.R.Sanjay Kumar, M.Prasanth <br />
+                Publication <br />
+                <i className ="springer" >Springer </i> <br />
+
+            </div>
+            <div className="publication-3">
+                <a href="https://link.springer.com/chapter/10.1007/978-981-15-2662-6_77" target="_blank"><img className="journal" src="978-981-15-2662-6.jpg" alt="" /> </a>
+
+            </div>
+
+        </div>
+      }
+
+     const AchievementList = ({title , description}) => {
+        return <div className="achievement"> {title} <br />  
+        <i className ="springer" > {description} </i>
+            </div>
+      }
+
+      const Achievement = () => {
+          return <div id="achievement">
+            <div className="achievement-1">
+                <h2>ACHIEVEMENTS</h2>
+            </div>
+            <AchievementList 
+            title ={"1st Place in IoT Makeathon sponsored by Intel ,Microsoft andCisco held in VIT University Chennai (10/2016)"} 
+            description={"Built a smart biker jacket that tracks the air quality and carbon monoxide and dioxide levels and sends it to a remote monitoring platform"} />
+            <AchievementList 
+            title ={"2nd Place in IoT Challenge in International Techfest of NIT Trichy sponsored by National Instruments and Intel (03/2017)"} 
+            description={"Made a health monitoring device that sends bpm, body temperature, external temperature and pressure to azure Iot platform."} />
+            <AchievementList 
+            title ={" 2nd Place in IoT Hackathon at INVENTE a National level Techfest held at SSN College of Engineering. (09/2016)"} 
+            description={"Made a smart helmet that can be used in mining industry."} />
+            <AchievementList 
+            title ={"Presented in 6th International Conference on Advances inEnergy Research at IIT Bombay (12/2017)"} 
+            description={""} />
+            <AchievementList 
+            title ={"Best Project Based Learning Award (11/2017)"} 
+            description={"The BLDC Driver done for the course Industrial Drives and Automation secured best PBL Award."} />
+            <AchievementList 
+            title ={"Innovative concept presented at L&T (01/2018)"} 
+            description={" Presented an Innovative concept on Video Analytics for emotion detection at TECHgium innovation competition conducted by L&T Technology Services"} />
+ 
+        </div>
+      }
+
+      const AcademicProjects = () => {
+          return <div id="project">
+            <div className="project-1"><h2>ACADEMIC PROJECTS</h2>
+            </div>
+            <AchievementList 
+            title ={"Fabrication of Smart Electric Cycle (01/2018 – 04/2018)"} 
+            description={"Designed the drivetrain with BLDC motor. Lithium polymer battery pack of 24V and 15Ah was designed which gave 20 Km range. A Touch screen displayed vital info about battery, motor temperature , cell voltage, speed and distance travelled."} />
+            <AchievementList 
+            title ={"Design and fabrication of Brushless DC motor driver (08/2018 – 11/2018)"} 
+            description={"Developed a low cost Sensorless control of BLDC motor with back emf detection using AtMega328p microcontroller. Verified the design in MATLAB/Simulink and fabricated PCB in EAGLE software."} />
+            <AchievementList 
+            title ={"Solar powered buck boost converter for electric vehicle battery charging. (01/2017 – 03/2017)"} 
+            description={"Simulated a buck-boost converter of input voltage range of (20-24)v supplied by PV cells and output voltage (5 - 120) v with a rating of 500 Watts. Designed the PCB in EAGLE and fabricated and tested with operating efficiency of 91%"} />
+            <AchievementList 
+            title ={"Anti Car theft System (04/2016 – 05/2016)"} 
+            description={"The vehicle is connected to the internet using GSM module and the user can track the vehicle location in real time and can remotely lock the vehicle if it is stolen."} />
+          </div>
+      }
+
+      const Volunteer = () => {
+          return <div id="volunteer">
+            <div className="volunteer-1"><h2>VOLUNTEER EXPERIENCE</h2></div>
+            <div className="volunteer">
+               <b> Student coordinator </b> <br />
+                TechnoVIT   <br />
+                04/2017 – 06/2017  <br />
+                Achievement   <br /> <i className="springer">
+                Organised a national level event NFSAqua where 30 teams from all over india participated. 
+                The event got witnessed in Times of India Chennai Times due to its uniqueness</i>
+            </div>
+        </div>
+      }
+
+      const Interest = ( ) => {
+          return <div id="interest">
+            <div className="interest-1"><h2>INTERESTS</h2></div>
+            <div className="interest"> Power electronics </div>
+            <div className="interest"> Electric vehicle </div>
+            <div className="interest"> Alternative Energy source </div>
+            <div className="interest"> Drones </div>
+            <div className="interest"> Aeromodelling </div>
+        </div>
+      }
+
+      const App = () => {
+        return (
+          <>
+            <Header />
+            <Academic />
+            <Experience />
+            <Skill />
+            <Publication />
+            <Achievement />
+            <AcademicProjects />
+            <Volunteer />
+            <Interest />
+
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
